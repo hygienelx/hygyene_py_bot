@@ -1,9 +1,8 @@
 import schedule
 import time
-from teams_messages import daily, test_connection
+from teams_messages import daily
 
-test_connection.send()
-
+schedule.every(10).seconds.do(daily.send)
 schedule.every().monday.at("08:45").do(daily.send)
 schedule.every().tuesday.at("08:45").do(daily.send)
 schedule.every().wednesday.at("08:45").do(daily.send)
