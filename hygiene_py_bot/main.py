@@ -9,7 +9,7 @@ schedule.every().wednesday.at(QUARTER_TO_NINE).do(daily.send)
 schedule.every().thursday.at(QUARTER_TO_NINE).do(daily.send)
 schedule.every().friday.at(QUARTER_TO_NINE).do(daily.send)
 
-schedule.every().saturday.at("22:20").do(daily.send)
+schedule.every().sunday.at(QUARTER_TO_NINE).do(daily.send)
 
 while True:
     schedule.run_pending()
