@@ -1,0 +1,1 @@
+worker: python hygiene_py_bot/main.py 
