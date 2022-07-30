@@ -1,9 +1,8 @@
 import pymsteams
 import random
-from consts import DAILY_HOOK_URL
 
-def send():
-    message = pymsteams.connectorcard(DAILY_HOOK_URL)
+def send_daily_message(hook_url):
+    message = pymsteams.connectorcard(hook_url)
 
     color = random.randbytes(3).hex()
     message.color(color)

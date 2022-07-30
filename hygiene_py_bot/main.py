@@ -1,15 +1,22 @@
 import schedule
 import time
-from teams_messages import daily
-from consts import QUARTER_TO_NINE
+from dotenv import load_dotenv
+from teams_messages import *
+import os
 
-schedule.every().monday.at(QUARTER_TO_NINE).do(daily.send)
-schedule.every().tuesday.at(QUARTER_TO_NINE).do(daily.send)
-schedule.every().wednesday.at(QUARTER_TO_NINE).do(daily.send)
-schedule.every().thursday.at(QUARTER_TO_NINE).do(daily.send)
-schedule.every().friday.at(QUARTER_TO_NINE).do(daily.send)
+load_dotenv()
 
-schedule.every().sunday.at(QUARTER_TO_NINE).do(daily.send)
+DAILY_HOOK_URL = os.environ.get("DAILY_HOOK_URL")
+QUARTER_TO_NINE = "11:45"
+
+schedule.every().monday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+schedule.every().tuesday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+schedule.every().wednesday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+schedule.every().thursday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+schedule.every().friday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+
+schedule.every().sunday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
+schedule.every(10).seconds.do(lambda: send_daily_message(DAILY_HOOK_URL))
 
 while True:
     schedule.run_pending()
