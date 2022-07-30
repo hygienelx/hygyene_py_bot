@@ -1,0 +1,1 @@
+DAILY_HOOK_URL = "https://pabloaderhotmail.webhook.office.com/webhookb2/67642cc8-7339-4ebb-bf7d-236ba49bab61@bea73cbb-f992-4226-8a59-353580703587/IncomingWebhook/227fbf8f28b449d19288f71c04b4d13f/979c2b83-14c4-4189-8db1-be6eb9846539"
