@@ -8,6 +8,8 @@ schedule.every().wednesday.at("08:45").do(daily.send)
 schedule.every().thursday.at("08:45").do(daily.send)
 schedule.every().friday.at("08:45").do(daily.send)
 
+schedule.every().saturday.at("19:12").do(daily.send)
+
 while True:
     schedule.run_pending()
     time.sleep(1)
