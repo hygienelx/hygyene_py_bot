@@ -15,8 +15,6 @@ schedule.every().wednesday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAI
 schedule.every().thursday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
 schedule.every().friday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
 
-schedule.every().sunday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_HOOK_URL))
-
 while True:
     schedule.run_pending()
     time.sleep(1)
