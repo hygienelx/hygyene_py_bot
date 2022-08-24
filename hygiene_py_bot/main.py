@@ -17,4 +17,4 @@ schedule.every().friday.at(QUARTER_TO_NINE).do(lambda: send_daily_message(DAILY_
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(60)
